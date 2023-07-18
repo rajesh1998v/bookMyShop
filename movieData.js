@@ -4,37 +4,57 @@ movies=[
         name:"War",
         rating:"78%",
         votes:"264,871",
-        city:["NCR", "Ahmedabad", "Banglore", "Chennai", "Mumbai"],
+        city:["Delhi","Mumbai", "Ahmedabad","Banglore", "Chennai","Kolkata","Chandigarh"],
         language:["Hindi","English"],
-        format:["2D","3D"],
+        format:["2D","3D","4DX","IMAX 2D"],
         genre:["Action"],
         img:"http://www.deucreatives.com/wp-content/uploads/2019/09/70655693_10157828111134407_6781510359724326912_n.jpg",
-
+        coverImg:"https://c.ndtvimg.com/2019-10/2uuqsfpg_war-movie-review_625x300_02_October_19.jpg",
     },
     {
         id:2,
         name:"Sooryavanshi",
         rating:"82%",
         votes:"321,258",
-        city:["NCR", "Ahmedabad", "Banglore", "Chennai", "Mumbai"],
-        language:["Hindi","English"],
+        city:["Kolkata", "Ahmedabad", "Banglore", "Chennai", "Mumbai"],
+        language:["Hindi","English","Panjabi","Gujarati"],
         format:["2D","3D"],
         genre:["Action","Comedy"],
         img:"https://image.songsuno.com/movie-images/original/movie/sooryavanshi-(2020)/sooryavanshi-(2020)-poster.jpg",
-
+        coverImg:"https://www.bollywoodhungama.com/wp-content/uploads/2018/12/Sooryavanshi-banner.jpg"
     },
     {
         id:3,
         name:"KGF",
         rating:"94%",
         votes:"401,278",
-        city:["NCR", "Ahmedabad", "Banglore", "Chennai", "Mumbai"],
-        language:["Hindi","English","Tamil"],
-        format:["2D","3D","4DX"],
-        genre:["Action"],
+        city:["Delhi", "Ahmedabad", "Banglore", "Chennai", "Mumbai","Chandigarh","Kolkata"],
+        language:["Hindi","English","Tamil","Panjabi","Telugu","Gujarati"],
+        format:["2D","3D","4DX","IMAX 2D","MX4D","2D SCREEN X","ICE"],
+        genre:["Action","Comedy","Romantic"],
         img:"https://mir-s3-cdn-cf.behance.net/project_modules/1400/1b739c74284099.5c2a29444cdef.png",
+        coverImg:"https://th-i.thgim.com/public/todays-paper/tp-opinion/nvvgym/article65427951.ece/alternates/FREE_1200/19th-oped-film_%2BGD19QV6VC.4.jpg.jpg"
+    },
 
-    }
+
+
+
+
+    {
+        id:4,
+        name:"Hungama 2",
+        rating:"54%",
+        votes:"3089",
+        city:["Delhi", "Kolkata", "Banglore", "Chennai", "Mumbai"],
+        language:["Hindi","English","Tamil"],
+        format:["2D","3D","IMAX 2D"],
+        genre:["Comedy","Romantic","Drama"],
+        img:"https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_2_5x/sources/r1/cms/prod/1535/1101535-v-cac451b9ee92",
+        coverImg:"https://i.ytimg.com/vi/RC8dHEENNHQ/maxresdefault.jpg"
+    },
+    
+   
+    
 ]
 
 halls=[
