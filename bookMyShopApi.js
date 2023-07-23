@@ -16,7 +16,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-var port = process.env.PORT || 2310;
+var port = process.env.PORT || 2410;
 app.listen(port,()=>console.log(`Listening on port ${port}!`));
 
 app.use(passport.initialize());
@@ -25,7 +25,9 @@ const parama = {
 };
 const jwtExpirySeconds = 300;
 
-const { movies,halls,booksTicket,users } = require("./movieData");
+const { movies,users,cities } = require("./movieData");
+const { halls } = require("./hallData");
+const { booksTicket } = require("./bookTicketData");
 
 let strategyAll = new JWTStrategy(parama,function(token,done){
   // console.log("In JWTStrategy-All", token);
@@ -54,6 +56,7 @@ app.post("/user",function(req,res){
 
 app.get("/user",passport.authenticate("roleAll",{session: false}),function(req,res){
   // console.log("In GET /user", req.user);
+  console.log(req.user);
   res.send(req.user);
 });
 
@@ -62,7 +65,7 @@ app.get("/movies/:city",function(req,res){
   let q = req.query.q;
   let lang = req.query.lang;
   let format  = req.query.format;
-  let genre = req.query.genre;
+  let genres = req.query.genres;
   try{
     let movieArr = movies.filter(m1=>m1.city.find(c1=>c1===city));
     if(q) movieArr = movieArr.filter(m1=>m1.name===q);
@@ -74,8 +77,8 @@ app.get("/movies/:city",function(req,res){
       let formtArr = format.split(",");
       movieArr = movieArr.filter((m1)=>m1.format.find(ft=>formtArr.find(l1=>l1===ft)));
     }
-    if(genre){
-      let genreArr = genre.split(",");
+    if(genres){
+      let genreArr = genres.split(",");
       movieArr = movieArr.filter((m1)=>m1.genre.find(gt=>genreArr.find(g1=>g1===gt)));
     }
     res.send(movieArr);
@@ -203,5 +206,10 @@ app.post("/updateUser",function(req,res){
     res.status(200).send("update successfully");
   }else
     res.status(404).send("Not Found");
+
+})
+
+app.get("/cities",function(req,res){
+  res.send(cities);
 
 })
