@@ -8,7 +8,7 @@ movies=[
         language:["Hindi","English"],
         format:["2D","3D","4DX","IMAX 2D",],
         genre:["Action"],
-        img:"http://www.deucreatives.com/wp-content/uploads/2019/09/70655693_10157828111134407_6781510359724326912_n.jpg",
+        img:"https://upload.wikimedia.org/wikipedia/en/thumb/6/6f/War_official_poster.jpg/220px-War_official_poster.jpg",
         coverImg:"https://c.ndtvimg.com/2019-10/2uuqsfpg_war-movie-review_625x300_02_October_19.jpg",
         about:"War is an intense armed conflict between states, governments, societies, or paramilitary groups such as mercenaries, insurgents, and militias. It is generally characterized by extreme violence, destruction, and mortality, using regular or irregular military forces.",
         releasing:"24 Aug, 2019",
