@@ -16,7 +16,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-var port = process.env.PORT || 2410;
+var port = process.env.PORT || 2022;
 app.listen(port,()=>console.log(`Listening on port ${port}!`));
 
 app.use(passport.initialize());
@@ -56,7 +56,7 @@ app.post("/user",function(req,res){
 
 app.get("/user",passport.authenticate("roleAll",{session: false}),function(req,res){
   // console.log("In GET /user", req.user);
-  console.log(req.user);
+  // console.log(req.user);
   res.send(req.user);
 });
 
@@ -68,7 +68,7 @@ app.get("/movies/:city",function(req,res){
   let genres = req.query.genres;
   try{
     let movieArr = movies.filter(m1=>m1.city.find(c1=>c1===city));
-    if(q) movieArr = movieArr.filter(m1=>m1.name===q);
+    if(q) movieArr = movieArr.filter(m1=>m1.name.toLowerCase()===q.toLowerCase());
     if(lang){
       let langArr = lang.split(",");
       movieArr = movieArr.filter((m1)=>m1.language.find(lg=>langArr.find(l1=>l1===lg)));
@@ -159,7 +159,7 @@ app.post("/bookingSeat/:id",function(req,res){
     booksTicket.push(newTicket);
     res.send(newTicket);
   }
-  let hall = halls.find(h1=>h1.name==body.movieHall);
+  let hall = halls.find(h1=>h1.name==body.hallName);
   body.tickets.map(t1=>{
       let seatNo = +t1.substring(1)-1;
       let findSeat = hall.showSeat[body.timeIndex].time.find(f1=>f1.name=== t1.charAt(0)).seatNo;
@@ -179,7 +179,7 @@ app.post("/register",function(req,res){
   }else{
     res.send({error:"email already exists"})
   }
-  console.log(user);
+  // console.log(user);
  
   // console.log(newUser);
 
