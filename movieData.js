@@ -211,6 +211,6 @@ cities=[
 
 users=[
     {id:1,email:"test@test.com",firstName:"Jane",lastName:"Doe",gender:"man",married:"No",mobileNo:9811574521,password:"test1234"},
-    {id:2,email:"test@gmail.com",firstName:"Rajesh",lastName:"kumar",gender:"man",married:"No",mobileNo:8754254152,password:"123456"},
+    {id:2,email:"test@gmail.com",firstName:"Rajesh",lastName:"kumar",gender:"",married:"",mobileNo:8754254152,password:"123456"},
 ]
 module.exports= {movies,users,cities};
